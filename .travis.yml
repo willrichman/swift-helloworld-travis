@@ -1,6 +1,19 @@
 sudo: required
 dist: trusty
 
+#branches:
+#  only:
+#    - master
+
+#matrix:
+#  include:
+#    - os: linux
+#      dist: trusty
+#      sudo: required
+#    - os: osx
+#      osx_image: xcode8.2
+#      sudo: required
+
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -y ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget https://swift.org/builds/swift-3.0.1-release/ubuntu1404/swift-3.0.1-RELEASE/swift-3.0.1-RELEASE-ubuntu14.04.tar.gz    ; fi
@@ -16,3 +29,11 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then swift build ; fi
   #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then swift test ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./.build/debug/HelloWorld ; fi
+  
+#env:
+#  - secure: "TRAVIS-SECRET-ENVIRONMENT-VARIABLE-GOES-HERE"
+# This would contain a secret token with your github personal access token
+
+#after_success:
+#  - "chmod a+x /home/travis/build/MY-REPO/swift-helloworld-travis/travis-automerge"
+#  - "BRANCHES_TO_MERGE_REGEX='MY-DEV-BRANCH' BRANCH_TO_MERGE_INTO=BRANCH-TO-MERGE-TO GITHUB_REPO=MY-REPO/swift-helloworld-travis /home/travis/build/MY-REPO/swift-helloworld-travis/travis-automerge"
