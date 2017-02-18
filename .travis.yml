@@ -15,4 +15,5 @@ before_install:
 script:
 
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then swift build ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then swift test ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./.build/debug/HelloWorld ; fi
