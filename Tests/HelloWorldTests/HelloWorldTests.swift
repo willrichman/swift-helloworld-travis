@@ -1,7 +1,5 @@
 import XCTest
 import Foundation
-import HeliumLogger
-import LoggerAPI
 
 @testable import HelloWorld
 
