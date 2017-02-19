@@ -3,7 +3,7 @@ import Glibc
 
 let player = ["rock", "paper", "scissors", "lizard", "spock"]
 
-print("Hello World!")
+print("Hello Seattle!")
 print("Let's play rock, paper, scissors, lizard, spock!")
 
 srandom(UInt32(NSDate().timeIntervalSince1970))
